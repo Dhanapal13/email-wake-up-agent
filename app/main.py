@@ -7,7 +7,7 @@ FastAPI entrypoint.
 
 import logging
 from contextlib import asynccontextmanager
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 from fastapi import FastAPI, HTTPException
@@ -55,7 +55,7 @@ async def lifespan(_app: FastAPI):
 
 app = FastAPI(
     title="Email Wake-Up Agent",
-    description="Autonomous email agent that negotiates and books calls",
+    description="Autonomous email agent that negotiates gig jobsand books calls",
     version="0.1.0",
     lifespan=lifespan,
 )
@@ -124,7 +124,7 @@ async def inbound_email(email: InboundEmail):
     inbound_msg = Message(
         role="user",
         content=email.body,
-        timestamp=datetime.utcnow().isoformat(),
+        timestamp=datetime.now(timezone.utc).isoformat(),
         meta={"from": email.from_email, "subject": email.subject},
     )
     append_message(thread_id, inbound_msg)
