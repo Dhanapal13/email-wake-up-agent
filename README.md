@@ -134,3 +134,20 @@ stateDiagram-v2
         Agent never starts from zero.
     end note
 ```
+
+
+How to run the project:
+
+cd email-wakeup-agent
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# Start Ollama (required for real LLM replies)
+ollama pull llama3.1:8b
+ollama serve
+
+# API
+uv run uvicorn app.main:app --reload --port 8000
+
+# Generate the three required transcripts
+python -m scripts.demo_transcripts

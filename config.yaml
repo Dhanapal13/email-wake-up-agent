@@ -1,0 +1,28 @@
+gig:
+  title: "Senior Full-Stack Engineer (Remote)"
+  description: |
+    We are building an AI-native productivity suite at Marseer AI.
+    Looking for someone who can own features end-to-end (Python + React + infra).
+    3–6 month contract with possibility of full-time conversion.
+  budget_ceiling_usd: 85          # hourly hard ceiling
+  company: "Marseer AI"
+  tone: "professional, concise, slightly warm, never pushy or salesy"
+
+model:
+  name: "llama3.1:8b"             # Ollama model
+  temperature: 0.4
+
+email:
+  from_name: "Alex Rivera"
+  from_address: "alex@marseer.ai"
+  # Credentials come from environment variables:
+  # SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
+  # IMAP_HOST, IMAP_PORT, IMAP_USER, IMAP_PASS (optional)
+
+calendar:
+  available_slots:
+    - "2026-04-15 10:00-10:30 UTC"
+    - "2026-04-15 14:00-14:30 UTC"
+    - "2026-04-16 09:00-09:30 UTC"
+    - "2026-04-17 15:00-15:30 UTC"
+    - "2026-04-18 11:00-11:30 UTC"
